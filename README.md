@@ -7,7 +7,7 @@ A set of shared LightOS-styled screens for other [Light SDK](https://github.com/
 > [!NOTE]
 > **These components are simply copy-paste for now, rather than a dependency or something else.** Grab the component you need from `components/`, paste it into your own tool, and rename the package. Nothing here is versioned or published, so once you copy something, updates here don't reach you automatically. (Always open to changing this if you have a suggestion!)
 
-## What's here
+### What's here
 
 * Date picker: full-screen calendar month picker
 * Time picker: numpad time entry, 12h and 24h
