@@ -22,9 +22,9 @@ Either way, the hope is a community-backed design system that takes that burden 
 
 ## A disclaimer
 
-This isn't meant to discourage anyone from designing something new. It's for people building tools who want the option to feel as close to the native LightOS experience as possible, not a rule that everything has to look identical.
+This isn't meant to discourage anyone from designing something new. Really, it's the opposite. I hope creating a shared set of community-made "components" is something everyone can benefit from!
 
-I'm also not an authority on what "LightOS-faithful" means beyond my own best guesses. And honestly I'm just screenshotting LightOS and refining from there most of the time! If you know better or see something off, I'd genuinely like the help, open an issue or a PR.
+I'm also not an authority on what "LightOS-faithful" means beyond my own best guesses. (Honestly I'm just screenshotting LightOS and refining from there most of the time!) If you have ideas on how this project as a whole could improve, I'd _seriously_ appreciate the help. Open an issue or a PR anytime!
 
 ---
 
