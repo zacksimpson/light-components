@@ -23,6 +23,12 @@ package com.thelightphone.components.shakereport
  * [install] also arms the crash handler, so there is exactly one call to make and no way to end
  * up with reporting that works except for crashes.
  *
+ * **This component never transmits anything.** `appName`, `label`, `token` and `repo` are held
+ * here so a consuming app can read them when it builds its own report — this module contains no
+ * sender, no network call and no database. The capture is local (a crash log file), and sending
+ * is the consuming app's job: it owns the destination and the credentials. A future or external
+ * port may add a sender; this one deliberately does not.
+ *
  * Not calling it at all is a supported state: the detector never fires a callback, the crash
  * handler is never armed, and nothing is queued. An app that has not opted in pays nothing.
  */
@@ -54,8 +60,8 @@ object LightReport {
 
     /**
      * @param token usually `BuildConfig.REPORT_TOKEN`. Blank is fine and normal — a build with
-     *   no key still collects reports, queues them on disk, and sends them from a later build
-     *   that has one.
+     *   no key still collects and captures locally; nothing in this module ever uses the token
+     *   to send, it is held here for the consuming app's own sender to read.
      */
     @JvmStatic
     @JvmOverloads

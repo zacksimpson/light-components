@@ -39,7 +39,7 @@ I'm also not an authority on what "LightOS-faithful" means beyond my own best gu
 * Hardware keys: recognising the wheel and two-stage camera button from raw key events
 * Wheel: turning the hardware wheel into scrolling or discrete steps
 * Light theme: the three greys that are the whole LightOS palette, plus the Akkurat loader
-* Shake to report: shake gesture, crash log, and report config for building a "send feedback" flow
+* Shake to report: shake gesture, crash log, and report config for building a "send feedback" flow — **the gesture, capture, and config only; it never submits anything** (the sending layer is the consuming app's to write)
 
 ### Planned
 * Conversations thread screen (messaging tools)

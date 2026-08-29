@@ -10,7 +10,7 @@ The plumbing for "shake the phone, offer to send a report": recognising a delibe
 * `ShakeDetector.kt`: the accelerometer wiring. On only while the app is in front (registered in `onResume`, dropped in `onPause`), so it is not a battery question.
 * `ShakeMonitor.kt`: a window onto the detector for a settings-screen readout (`ShakeReading`), open only while something is looking — publishing 50Hz samples into a flow nobody collects is waste.
 * `CrashLog.kt`: writes the last crash to a file so the next launch can offer to send it. Nothing is sent from in here; a dying process has no business opening a socket.
-* `LightReport.kt`: the one thing a consuming app must set up — app name, triage label, token, repo. Also arms the crash handler.
+* `LightReport.kt`: the one thing a consuming app must set up — app name, triage label, token, repo. Also arms the crash handler. **Config only: it never sends anything** (see the note at the bottom).
 * `ShakeGestureTest.kt`: the JVM tests for the gesture logic.
 
 ## Depends on
@@ -30,4 +30,4 @@ The plumbing for "shake the phone, offer to send a report": recognising a delibe
 > Not calling `LightReport.install` is a supported state — nothing renders, nothing appears, nothing is queued. An app that has not opted in pays nothing.
 
 > [!NOTE]
-> The sheet UI, issue filing, and the GitHub integration live in the consuming app. This component is deliberately the non-visual half — the gesture, the capture, and the config — so there is no token, no repo convention, and no HTTP in here.
+> **This component never submits anything.** It recognises a shake, captures the last crash to a local file, and holds a config object — that is the whole surface. There is no database, no network call, no HTTP, no GitHub/token logic, and no code path that transmits a report anywhere. If a consuming app wants to send reports, it writes that layer itself: it decides the destination, owns the credentials, and reads the captured data out of this module. Nothing in here gives an app a head start toward any particular backend, yours or anyone else's.
