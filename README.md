@@ -26,6 +26,12 @@ This isn't meant to discourage anyone from designing something new. Really, it's
 
 I'm also not an authority on what "LightOS-faithful" means beyond my own best guesses. (Honestly I'm just screenshotting LightOS and refining from there most of the time!) If you have ideas on how this project as a whole could improve, I'd _seriously_ appreciate the help. Open an issue or a PR anytime!
 
+## Contributing a component
+
+Already built something? Open a ["Submit a component"](https://github.com/zacksimpson/light-components/issues/new?template=submit-component.yml) issue with a link to your code, mainly so we can talk through fit before you put in the work to match the shape below. Not required, a PR works too if you're already there.
+
+To match the shape, copy an existing component's folder as a starting point, `components/date-picker/` is a solid one. Each one is a `build.gradle.kts` (namespace under `com.thelightphone.components.<name>`), a `README.md` (what it does, `Depends on`, `Pasting this in`), and the screen itself under `src/main/kotlin/com/thelightphone/components/<name>/`. Strip anything specific to your own tool, its own persistence, navigation to its other screens, that kind of coupling shouldn't leak in. Add a line to "What's here" below, then open the PR (referencing the issue number if there is one).
+
 ---
 
 > [!NOTE]
