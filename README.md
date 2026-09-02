@@ -42,6 +42,10 @@ To match the shape, copy an existing component's folder as a starting point, `co
 * Date picker: full-screen calendar month picker 
 * Time picker: numpad time entry, 12h and 24h
 * Settings screen: scaffold plus link, toggle, and value rows (to be built out with each "style" of setting we see in LightOS)
+* Hardware keys: recognising the wheel and two-stage camera button from raw key events
+* Wheel: turning the hardware wheel into scrolling or discrete steps
+* Light theme: the three greys that are the whole LightOS palette, plus the Akkurat loader
+* Shake to report: shake gesture, crash log, and report config for building a "send feedback" flow — **the gesture, capture, and config only; it never submits anything** (the sending layer is the consuming app's to write)
 
 ### Planned
 * Conversations thread screen (messaging tools)
