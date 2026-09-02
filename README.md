@@ -12,6 +12,7 @@ A set of shared LightOS-styled screens for other [Light SDK](https://github.com/
 * Date picker: full-screen calendar month picker
 * Time picker: numpad time entry, 12h and 24h
 * Settings screen: scaffold plus link, toggle, and value rows
+* Calculator: standard four-function grid
 
 ### Planned
 * Conversations thread screen (messaging tools)
