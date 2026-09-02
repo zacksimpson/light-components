@@ -1,0 +1,70 @@
+name: Submit a component
+description: Share a screen or component you've built so it can be considered for the collection.
+title: "[Component]: "
+labels: ["component submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Component name
+      description: What should it be called (matches the "What's here" list style, e.g. Date Picker)
+      placeholder: Now Playing screen
+    validations:
+      required: true
+
+  - type: input
+    id: code_url
+    attributes:
+      label: Link to the code
+      description: A repo, branch, gist, or PR with the implementation
+      placeholder: https://github.com/username/your-tool/blob/main/.../NowPlayingScreen.kt
+    validations:
+      required: true
+
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Is it recreating a stock LightOS screen, or your own design?
+      description: Helps sort submissions that match existing LightOS UI (like date-picker matching the system calendar) from ones that are novel to your tool
+      options:
+        - Recreates a stock LightOS screen or pattern
+        - Original design, not based on a stock screen
+    validations:
+      required: true
+
+  - type: input
+    id: origin_detail
+    attributes:
+      label: Which stock screen, if applicable
+      description: Only if you picked "recreates a stock screen" above, name the LightOS screen or pattern it matches
+      placeholder: Stock Notes app's list view
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What it does
+      description: A short description of the component and how it behaves, for the README
+      placeholder: Full-screen numpad entry for a dollar amount, decimal locked to two places...
+    validations:
+      required: true
+
+  - type: textarea
+    id: depends_on
+    attributes:
+      label: Depends on
+      description: SDK types it pulls in, matching each component README's "Depends on" list
+      placeholder: |
+        com.thelightphone.sdk: SealedLightActivity, SimpleLightScreen
+        com.thelightphone.sdk.ui: LightTheme, LightText, gridUnitsAsDp
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: Drag images into this box or paste direct image URLs
+    validations:
+      required: false
