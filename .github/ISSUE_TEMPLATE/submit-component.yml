@@ -3,6 +3,11 @@ description: Share a screen or component you've built so it can be considered fo
 title: "[Component]: "
 labels: ["component submission"]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Planning to open the PR yourself? Copy `components/_template/` for the file shape (build.gradle.kts, README sections, screen skeleton) instead of guessing at the layout from an existing component.
+
   - type: input
     id: name
     attributes:
