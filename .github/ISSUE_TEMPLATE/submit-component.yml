@@ -1,0 +1,39 @@
+name: Submit a component
+description: Got something built? Share it here so we can figure out if it's a fit.
+title: "[Component]: "
+labels: ["component submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Component name
+      placeholder: Now Playing screen
+    validations:
+      required: true
+
+  - type: input
+    id: code_url
+    attributes:
+      label: Link to the code
+      description: Repo, branch, gist, whatever has it
+      placeholder: https://github.com/you/your-tool/blob/main/.../NowPlayingScreen.kt
+    validations:
+      required: true
+
+  - type: dropdown
+    id: origin
+    attributes:
+      label: Recreating a stock LightOS screen, or your own design?
+      options:
+        - Recreates a stock LightOS screen
+        - Original, not based on a stock screen
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What it does
+      placeholder: A couple sentences on what it is and how it behaves.
+    validations:
+      required: true
