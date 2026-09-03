@@ -42,6 +42,7 @@ To match the shape, copy an existing component's folder as a starting point, `co
 * Date picker: full-screen calendar month picker 
 * Time picker: numpad time entry, 12h and 24h
 * Settings screen: scaffold plus link, toggle, and value rows (to be built out with each "style" of setting we see in LightOS)
+* Calculator: standard four-function grid
 
 ### Planned
 * Conversations thread screen (messaging tools)

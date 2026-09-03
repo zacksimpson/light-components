@@ -4,6 +4,12 @@ Standard four-function calculator grid: digit entry, +/-/x/÷, decimal, sign tog
 
 ---
 
+## Files
+
+* `CalculatorScreen.kt`: the screen itself
+* `CalculatorLogic.kt`: pure state transitions for the four-function math, no app coupling
+* `CalculatorLogicTest.kt`: covers the file above
+
 ## Depends on
 
 * `com.thelightphone.sdk`: `SealedLightActivity`, `SimpleLightScreen`
@@ -11,7 +17,7 @@ Standard four-function calculator grid: digit entry, +/-/x/÷, decimal, sign tog
 
 ## Pasting this in
 
-1. Rename the `package` declaration in both files.
+1. Rename the `package` declaration in all three files.
 2. `CalculatorScreen` extends `SimpleLightScreen<String>` and returns the display value as a plain string, whatever's shown when CLOSE is tapped (not necessarily the result of an `=`).
 3. `CalculatorLogic` is a plain object over an immutable `CalculatorState`, one pure function per button. No ViewModel, no coroutine scope, so it drops straight into `remember { mutableStateOf(CalculatorState()) }`.
 
