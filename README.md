@@ -25,12 +25,20 @@ Either way, the hope is a community-backed design system that takes that burden 
 
 ### What's Here
 
+Split into two folders: `components/stock/` recreates real LightOS screens as closely as possible, `components/original/` is new ideas from the community that don't exist in LightOS yet. Both are welcome, see [Contributing a component](#contributing-a-component) below.
+
+**Stock**
+
 | Component | Description |
 | :--- | :--- |
 | Date picker | Full-screen calendar month picker |
 | Time picker | Numpad time entry, 12h and 24h |
 | Settings screen | Scaffold plus link, toggle, and value rows (to be built out with each "style" of setting we see in LightOS) |
 | Calculator | Numpad and function buttons for performing basic calculations |
+
+**Original**
+
+Nothing here yet, be the first!
 
 ### Planned
 
@@ -43,7 +51,7 @@ Either way, the hope is a community-backed design system that takes that burden 
 
 ## Contributing a component
 
-1. To match the shape, copy an existing component's folder as a starting point (`components/date-picker/` is a solid one). Each one is a `build.gradle.kts` (namespace under `com.thelightphone.components.<name>`), a `README.md` (what it does, `Depends on`, `Pasting this in`), and the screen itself under `src/main/kotlin/com/thelightphone/components/<name>/`.
+1. Pick a home: `components/stock/<name>/` if it recreates an existing LightOS screen, `components/original/<name>/` if it's your own design, matching whichever you pick in the submission form below. To match the shape, copy an existing component's folder as a starting point (`components/stock/date-picker/` is a solid one). Each one is a `build.gradle.kts` (namespace under `com.thelightphone.components.<name>`), a `README.md` (what it does, `Depends on`, `Pasting this in`), and the screen itself under `src/main/kotlin/com/thelightphone/components/<name>/`.
 2. Strip anything specific to your own tool, its own persistence, navigation to its other screens, etc.
 3. Make sure your component builds against the official Light SDK (see below for instructions). 
 4. Open a ["Submit a component"](https://github.com/zacksimpson/light-components/issues/new?template=submit-component.yml) issue with a link to your code, mainly so we can talk through fit before you submit a PR. 
@@ -64,7 +72,7 @@ Each component is a real Gradle module, but it only compiles alongside an actual
 
 ```kotlin
 include(":date-picker")
-project(":date-picker").projectDir = file("../light-components/components/date-picker")
+project(":date-picker").projectDir = file("../light-components/components/stock/date-picker")
 ```
 
 </details>
